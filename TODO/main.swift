@@ -7,5 +7,16 @@
 
 import Foundation
 
-print("Hello, World!")
+var input = ""
+let controller: Controller = Controller.instance
+var outputText: OutputTexts = OutputTexts.instance
+
+while input.lowercased() != "end" {
+    input = readLine()!
+    
+    
+    
+}
+
+
 
