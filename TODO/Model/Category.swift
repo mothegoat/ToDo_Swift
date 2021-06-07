@@ -15,4 +15,8 @@ class Category{
     init(title: String) {
         self.title = title
     }
+    
+    func addItem(item: Item) -> Void {
+        todoItems.append(item)
+    }
 }

@@ -12,15 +12,18 @@ class OutputTexts{
     
     private init() {}
     
-    let helpMain = """
+    let mainMenu = """
 Enter number for command:
 1.ToDo Items
 2.ToDo Categories
 3.Make a new ToDo Item
 4.Make a new Category
-00.Help
 """
-    let helpToDo = """
-    
+    let toDoMenu = """
+    Your ToDo items:
     """
+    
+    let goBack = "To go back enter 00"
+    
+    let invalidCommand = "Your command is invalid"
 }

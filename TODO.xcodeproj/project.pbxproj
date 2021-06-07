@@ -10,9 +10,16 @@
 		E06FBA30266DF44B00D0ACE4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA2F266DF44B00D0ACE4 /* main.swift */; };
 		E06FBA3D266E268D00D0ACE4 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA3C266E268D00D0ACE4 /* Controller.swift */; };
 		E06FBA44266E27BD00D0ACE4 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA43266E27BD00D0ACE4 /* Priority.swift */; };
-		E06FBA47266E280B00D0ACE4 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA46266E280B00D0ACE4 /* ToDoItem.swift */; };
+		E06FBA47266E280B00D0ACE4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA46266E280B00D0ACE4 /* Item.swift */; };
 		E06FBA4A266E290B00D0ACE4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA49266E290B00D0ACE4 /* Category.swift */; };
 		E06FBA4D266E2A5E00D0ACE4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA4C266E2A5E00D0ACE4 /* Strings.swift */; };
+		E06FBA50266E7DA800D0ACE4 /* MenuEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA4F266E7DA800D0ACE4 /* MenuEnum.swift */; };
+		E06FBA53266EA61700D0ACE4 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA52266EA61700D0ACE4 /* Menu.swift */; };
+		E06FBA58266EA71A00D0ACE4 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA57266EA71A00D0ACE4 /* MainMenu.swift */; };
+		E06FBA5B266EA81E00D0ACE4 /* ItemsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA5A266EA81E00D0ACE4 /* ItemsMenu.swift */; };
+		E06FBA5F266EB0AB00D0ACE4 /* CategoriesMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA5E266EB0AB00D0ACE4 /* CategoriesMenu.swift */; };
+		E06FBA66266EB20400D0ACE4 /* AddItemMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA65266EB20400D0ACE4 /* AddItemMenu.swift */; };
+		E06FBA6A266EB2F200D0ACE4 /* AddCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA69266EB2F200D0ACE4 /* AddCategoryMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,9 +39,16 @@
 		E06FBA2F266DF44B00D0ACE4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E06FBA3C266E268D00D0ACE4 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		E06FBA43266E27BD00D0ACE4 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
-		E06FBA46266E280B00D0ACE4 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		E06FBA46266E280B00D0ACE4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E06FBA49266E290B00D0ACE4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E06FBA4C266E2A5E00D0ACE4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		E06FBA4F266E7DA800D0ACE4 /* MenuEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEnum.swift; sourceTree = "<group>"; };
+		E06FBA52266EA61700D0ACE4 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		E06FBA57266EA71A00D0ACE4 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		E06FBA5A266EA81E00D0ACE4 /* ItemsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsMenu.swift; sourceTree = "<group>"; };
+		E06FBA5E266EB0AB00D0ACE4 /* CategoriesMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesMenu.swift; sourceTree = "<group>"; };
+		E06FBA65266EB20400D0ACE4 /* AddItemMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemMenu.swift; sourceTree = "<group>"; };
+		E06FBA69266EB2F200D0ACE4 /* AddCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +91,27 @@
 		E06FBA37266E241600D0ACE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E06FBA56266EA68600D0ACE4 /* Menus */,
 				E06FBA43266E27BD00D0ACE4 /* Priority.swift */,
-				E06FBA46266E280B00D0ACE4 /* ToDoItem.swift */,
+				E06FBA46266E280B00D0ACE4 /* Item.swift */,
 				E06FBA49266E290B00D0ACE4 /* Category.swift */,
 				E06FBA4C266E2A5E00D0ACE4 /* Strings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E06FBA56266EA68600D0ACE4 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				E06FBA52266EA61700D0ACE4 /* Menu.swift */,
+				E06FBA4F266E7DA800D0ACE4 /* MenuEnum.swift */,
+				E06FBA57266EA71A00D0ACE4 /* MainMenu.swift */,
+				E06FBA5A266EA81E00D0ACE4 /* ItemsMenu.swift */,
+				E06FBA5E266EB0AB00D0ACE4 /* CategoriesMenu.swift */,
+				E06FBA65266EB20400D0ACE4 /* AddItemMenu.swift */,
+				E06FBA69266EB2F200D0ACE4 /* AddCategoryMenu.swift */,
+			);
+			path = Menus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,12 +171,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06FBA5F266EB0AB00D0ACE4 /* CategoriesMenu.swift in Sources */,
 				E06FBA30266DF44B00D0ACE4 /* main.swift in Sources */,
+				E06FBA58266EA71A00D0ACE4 /* MainMenu.swift in Sources */,
 				E06FBA4A266E290B00D0ACE4 /* Category.swift in Sources */,
+				E06FBA53266EA61700D0ACE4 /* Menu.swift in Sources */,
+				E06FBA50266E7DA800D0ACE4 /* MenuEnum.swift in Sources */,
+				E06FBA6A266EB2F200D0ACE4 /* AddCategoryMenu.swift in Sources */,
 				E06FBA3D266E268D00D0ACE4 /* Controller.swift in Sources */,
-				E06FBA47266E280B00D0ACE4 /* ToDoItem.swift in Sources */,
+				E06FBA47266E280B00D0ACE4 /* Item.swift in Sources */,
 				E06FBA4D266E2A5E00D0ACE4 /* Strings.swift in Sources */,
+				E06FBA66266EB20400D0ACE4 /* AddItemMenu.swift in Sources */,
 				E06FBA44266E27BD00D0ACE4 /* Priority.swift in Sources */,
+				E06FBA5B266EA81E00D0ACE4 /* ItemsMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
