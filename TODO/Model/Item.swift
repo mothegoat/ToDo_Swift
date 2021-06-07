@@ -13,11 +13,13 @@ class Item{
     var content: String
     static var allItems = [Item]()
     
-    init(priority: Int, title: String, content: String) {
+    init(priority: Int, title: String, content: String, addToItems: Bool) {
         self.priority = Item.convertPriorityIntToEnum(priority: priority)
         self.title = title
         self.content = content
-        Item.allItems.append(self)
+        if(addToItems){
+            Item.allItems.append(self)
+        }
     }
     
     static func convertPriorityIntToEnum(priority: Int) -> Priority {

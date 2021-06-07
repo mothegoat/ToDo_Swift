@@ -12,8 +12,11 @@ class Category{
     var title: String
     static var allCategories = [Category]()
     
-    init(title: String) {
+    init(title: String, addToCategories: Bool) {
         self.title = title
+        if(addToCategories){
+            Category.allCategories.append(self)
+        }
     }
     
     func addItem(item: Item) -> Void {

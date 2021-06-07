@@ -18,6 +18,7 @@ Enter number for command:
 2.ToDo Categories
 3.Make a new ToDo Item
 4.Make a new Category
+[TO EXIT ENTER END]
 """
     let toDoMenu = """
     Your ToDo items:
