@@ -25,6 +25,8 @@ class SelectedCategoryMenu: Menu {
             print("  \(i). \(item.title)")
             i += 1
         }
+        
+        print(OutputTexts.instance.goBack)
     }
     
 }

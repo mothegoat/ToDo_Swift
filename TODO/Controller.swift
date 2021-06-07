@@ -13,6 +13,8 @@ class Controller {
     var selectedItemIndex: Int = 0
     var selectedCategory: Category = Category(title: "test", addToCategories: false)
     var selectedCategoryIndex: Int = 0
+    var currentMenu: Menu = MainMenu.instance
+    var lastMenu: Menu = MainMenu.instance
     
     private init() {}
     
