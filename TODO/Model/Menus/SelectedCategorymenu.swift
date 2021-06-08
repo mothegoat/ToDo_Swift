@@ -19,14 +19,15 @@ class SelectedCategoryMenu: Menu {
     
     override func showMenu() {
         print("Title: \(controller.selectedCategory.title)")
-        print("items")
+        print("Items: ")
         var i = 1
         for item in controller.selectedCategory.todoItems {
             print("  \(i). \(item.title)")
             i += 1
         }
-        
-        print(OutputTexts.instance.goBack)
+        print("\n SELECT AN ITEM TO DELETE FROM THIS LIST.")
+        print(" ENTER *ADD* TO ADD A NEW ITEM TO THIS LIST.")
+        print(" ENTER *00* TO GO BACK.")
     }
     
 }

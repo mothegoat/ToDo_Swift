@@ -22,6 +22,8 @@
 		E06FBA6A266EB2F200D0ACE4 /* AddCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA69266EB2F200D0ACE4 /* AddCategoryMenu.swift */; };
 		E06FBA71266EC38F00D0ACE4 /* SelectedItemMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA70266EC38F00D0ACE4 /* SelectedItemMenu.swift */; };
 		E06FBA74266ECCCA00D0ACE4 /* SelectedCategorymenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA73266ECCCA00D0ACE4 /* SelectedCategorymenu.swift */; };
+		E06FBA77266F52BF00D0ACE4 /* MenuStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA76266F52BF00D0ACE4 /* MenuStack.swift */; };
+		E06FBA7A266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA79266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +55,8 @@
 		E06FBA69266EB2F200D0ACE4 /* AddCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryMenu.swift; sourceTree = "<group>"; };
 		E06FBA70266EC38F00D0ACE4 /* SelectedItemMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemMenu.swift; sourceTree = "<group>"; };
 		E06FBA73266ECCCA00D0ACE4 /* SelectedCategorymenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategorymenu.swift; sourceTree = "<group>"; };
+		E06FBA76266F52BF00D0ACE4 /* MenuStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStack.swift; sourceTree = "<group>"; };
+		E06FBA79266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemToCategoryMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				E06FBA37266E241600D0ACE4 /* Model */,
 				E06FBA2F266DF44B00D0ACE4 /* main.swift */,
 				E06FBA3C266E268D00D0ACE4 /* Controller.swift */,
+				E06FBA76266F52BF00D0ACE4 /* MenuStack.swift */,
 			);
 			path = TODO;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 				E06FBA69266EB2F200D0ACE4 /* AddCategoryMenu.swift */,
 				E06FBA70266EC38F00D0ACE4 /* SelectedItemMenu.swift */,
 				E06FBA73266ECCCA00D0ACE4 /* SelectedCategorymenu.swift */,
+				E06FBA79266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -180,8 +186,10 @@
 				E06FBA5F266EB0AB00D0ACE4 /* CategoriesMenu.swift in Sources */,
 				E06FBA30266DF44B00D0ACE4 /* main.swift in Sources */,
 				E06FBA58266EA71A00D0ACE4 /* MainMenu.swift in Sources */,
+				E06FBA7A266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift in Sources */,
 				E06FBA4A266E290B00D0ACE4 /* Category.swift in Sources */,
 				E06FBA53266EA61700D0ACE4 /* Menu.swift in Sources */,
+				E06FBA77266F52BF00D0ACE4 /* MenuStack.swift in Sources */,
 				E06FBA50266E7DA800D0ACE4 /* MenuEnum.swift in Sources */,
 				E06FBA6A266EB2F200D0ACE4 /* AddCategoryMenu.swift in Sources */,
 				E06FBA3D266E268D00D0ACE4 /* Controller.swift in Sources */,

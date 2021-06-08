@@ -24,7 +24,7 @@ Enter number for command:
     Your ToDo items:
     """
     
-    let goBack = "To go back enter 00"
+    let goBack = ""
     
     let invalidCommand = "Your command is invalid"
 }

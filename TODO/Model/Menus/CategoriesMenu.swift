@@ -24,8 +24,8 @@ class CategoriesMenu: Menu {
             i += 1
         }
         
-        print("To see category items, enter its number")
-        print(OutputTexts.instance.goBack)
+        print("\n TO SEE CATEGORY ITEMS, ENTER ITS NUMBER")
+        print(" TO GO BACK ENTER 00")
     }
     
 }

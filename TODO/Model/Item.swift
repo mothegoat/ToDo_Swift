@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Item{
+class Item: Equatable{
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.priority == rhs.priority && lhs.content == rhs.content && lhs.title == rhs.title
+    }
+    
     var priority: Priority
     var title: String
     var content: String

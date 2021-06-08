@@ -13,8 +13,9 @@ let controller: Controller = Controller.instance
 var outputText: OutputTexts = OutputTexts.instance
 //var currentMenuEnum: MenuEnum = MenuEnum.MAIN
 //var currentMenu: Menu = MainMenu.instance
+controller.menuOrder.goToNextPage(nextMenu: MainMenu.instance)
 
-print(controller.currentMenu.showMenu())
+print(controller.menuOrder.getCurrentMenu().showMenu())
 
 while input.lowercased() != "end" {
     
@@ -22,29 +23,27 @@ while input.lowercased() != "end" {
         input = readLine()!
     }
     
-    if(controller.currentMenu === MainMenu.instance){
+    if(controller.menuOrder.getCurrentMenu() === MainMenu.instance){
         switch input {
         case "1":
-            controller.lastMenu = controller.currentMenu
-            controller.currentMenu = ItemsMenu.instance
+            controller.menuOrder.goToNextPage(nextMenu: ItemsMenu.instance)
         case "2":
-            controller.lastMenu = controller.currentMenu
-            controller.currentMenu = CategoriesMenu.instance
+            controller.menuOrder.goToNextPage(nextMenu: CategoriesMenu.instance)
         case "3":
-            controller.lastMenu = controller.currentMenu
-            controller.currentMenu = AddItemMenu.instance
+            controller.menuOrder.goToNextPage(nextMenu: AddItemMenu.instance)
         case "4":
-            controller.lastMenu = controller.currentMenu
-            controller.currentMenu = AddCategoryMenu.instance
+            controller.menuOrder.goToNextPage(nextMenu: AddCategoryMenu.instance)
+//            controller.lastMenu = controller.currentMenu
+//            controller.currentMenu = AddCategoryMenu.instance
         default:
-            controller.currentMenu.commandNotFound()
+            controller.menuOrder.getCurrentMenu().commandNotFound()
         }
-    }else if (controller.currentMenu === ItemsMenu.instance){
+    }else if (controller.menuOrder.getCurrentMenu() === ItemsMenu.instance){
         if(input == "00"){
-            controller.currentMenu = controller.lastMenu
+            controller.menuOrder.goBack()
         }else{
             if(!input.isNumber){
-                controller.currentMenu.commandNotFound()
+                controller.menuOrder.getCurrentMenu().commandNotFound()
             }else{
                 inputInInt = Int(input)!
                 if(inputInInt > Item.allItems.count){
@@ -53,21 +52,20 @@ while input.lowercased() != "end" {
                     let item = Item.allItems[inputInInt - 1]
                     controller.selectedItem = item
                     controller.selectedItemIndex = inputInInt - 1
-                    controller.lastMenu = controller.currentMenu
-                    controller.currentMenu = SelectedItemMenu.instance
+                    controller.menuOrder.goToNextPage(nextMenu: SelectedItemMenu.instance)
                 }
             }
         }
-    }else if(controller.currentMenu === SelectedItemMenu.instance){
+    }else if(controller.menuOrder.getCurrentMenu() === SelectedItemMenu.instance){
         if(input == "00"){
-            controller.currentMenu = controller.lastMenu
+            controller.menuOrder.goBack()
         }else{
         if(!input.isNumber){
-            controller.currentMenu.commandNotFound()
+            controller.menuOrder.getCurrentMenu().commandNotFound()
         }else{
             inputInInt = Int(input)!
             if(inputInInt < 1 || inputInInt > 4){
-                controller.currentMenu.commandNotFound()
+                controller.menuOrder.getCurrentMenu().commandNotFound()
             }else{
                 if(inputInInt == 1){
                     print("Enter new title: ")
@@ -94,7 +92,7 @@ while input.lowercased() != "end" {
                         if(confirmation.lowercased() == "y"){
                             Item.allItems.remove(at: controller.selectedItemIndex)
                             print("Item has been deleted")
-                            controller.currentMenu = controller.lastMenu
+                            controller.menuOrder.goBack()
                             break
                         }else if(confirmation.lowercased() == "n"){
                             print("Deletion aborted.")
@@ -104,12 +102,12 @@ while input.lowercased() != "end" {
                         }
                     }
                 }else{
-                    controller.currentMenu.commandNotFound()
+                    controller.menuOrder.getCurrentMenu().commandNotFound()
                 }
             }
         }
     }
-    }else if(controller.currentMenu === AddItemMenu.instance){
+    }else if(controller.menuOrder.getCurrentMenu() === AddItemMenu.instance){
         print("Enter title: ")
         let title = readLine()!
         print("Enter priority(1 -> Low, 2 -> Medium, 3 -> High): ")
@@ -119,8 +117,8 @@ while input.lowercased() != "end" {
         
         controller.addItem(name: title, priority: priority, content: content)
         print ("Item \(title) has been added successfully!")
-        controller.currentMenu = controller.lastMenu
-    }else if(controller.currentMenu === AddCategoryMenu.instance){
+        controller.menuOrder.goBack()
+    }else if(controller.menuOrder.getCurrentMenu() === AddCategoryMenu.instance){
         print("Enter title: ")
         var title = ""
         while(true){
@@ -134,13 +132,13 @@ while input.lowercased() != "end" {
         
         controller.addCategory(title: title)
         print("Category \(title) has been created.")
-        controller.currentMenu = controller.lastMenu
-    }else if(controller.currentMenu === CategoriesMenu.instance){
+        controller.menuOrder.goBack()
+    }else if(controller.menuOrder.getCurrentMenu() === CategoriesMenu.instance){
         if(input == "00"){
-            controller.currentMenu = controller.lastMenu
+            controller.menuOrder.goBack()
         }else{
             if(!input.isNumber){
-                controller.currentMenu.commandNotFound()
+                controller.menuOrder.getCurrentMenu().commandNotFound()
             }else{
                 inputInInt = Int(input)!
                 if(inputInInt > Category.allCategories.count){
@@ -149,17 +147,55 @@ while input.lowercased() != "end" {
                     let category = Category.allCategories[inputInInt - 1]
                     controller.selectedCategory = category
                     controller.selectedCategoryIndex = inputInInt - 1
-                    controller.currentMenu = SelectedCategoryMenu.instance
+                    controller.menuOrder.goToNextPage(nextMenu: SelectedCategoryMenu.instance)
+                }
+            }
+        }
+    }else if(controller.menuOrder.getCurrentMenu() === SelectedCategoryMenu.instance){
+        if(input == "00"){
+            controller.menuOrder.goBack()
+        }else{
+            if(!input.isNumber){
+                if(input.lowercased() == "add"){
+                    controller.menuOrder.goToNextPage(nextMenu: AddItemToCategoryMenu.instance)
+                }else{
+                    controller.menuOrder.getCurrentMenu().commandNotFound()
+                }
+            }else{
+                inputInInt = Int(input)!
+                if(inputInInt > controller.selectedCategory.todoItems.count || inputInInt < 1){
+                    ItemsMenu.instance.itemNotFound()
+                }else{
+                    print("Item \(controller.selectedCategory.todoItems[inputInInt - 1].title) has been deleted")
+                    controller.selectedCategory.todoItems.remove(at: (inputInInt - 1))
+                }
+            }
+        }
+    }else if(controller.menuOrder.getCurrentMenu() === AddItemToCategoryMenu.instance){
+        if(input == "00"){
+            controller.menuOrder.goBack()
+        }else{
+            if(!input.isNumber){
+                controller.menuOrder.getCurrentMenu().commandNotFound()
+            }else{
+                inputInInt = Int(input)!
+                if(inputInInt > controller.selectedCategoryNotIncludedItems.count ||
+                    inputInInt < 1){
+                    ItemsMenu.instance.itemNotFound()
+                }else{
+                    let item = controller.selectedCategoryNotIncludedItems[inputInInt - 1]
+                    print("Item \(item.title) has been added to \(controller.selectedCategory.title)")
+                    controller.selectedCategory.addItem(item: item)
                 }
             }
         }
     }
     
-    controller.currentMenu.showMenu()
+    controller.menuOrder.getCurrentMenu().showMenu()
 }
 
 func skipInput() -> Bool {
-    if(controller.currentMenu === AddItemMenu.instance || controller.currentMenu === AddCategoryMenu.instance){
+    if(controller.menuOrder.getCurrentMenu() === AddItemMenu.instance || controller.menuOrder.getCurrentMenu() === AddCategoryMenu.instance){
         return true
     }else{
         return false

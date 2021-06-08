@@ -22,8 +22,8 @@ class ItemsMenu: Menu {
             print("\(i). \(item.title): \(item.priority)")
             i += 1
         }
-        print("To see the content, enter item's number.")
-        print(OutputTexts.instance.goBack)
+        print("\n TO SEE THE CONTENT, ENTER ITEM'S NUMBER.")
+        print(" TO GO BACK ENTER 00")
     }
     
     func itemNotFound() ->  Void{

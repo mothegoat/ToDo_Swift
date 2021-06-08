@@ -13,8 +13,11 @@ class Controller {
     var selectedItemIndex: Int = 0
     var selectedCategory: Category = Category(title: "test", addToCategories: false)
     var selectedCategoryIndex: Int = 0
-    var currentMenu: Menu = MainMenu.instance
-    var lastMenu: Menu = MainMenu.instance
+    var selectedCategoryNotIncludedItems = [Item]()
+//
+//    var currentMenu: Menu = MainMenu.instance
+//    var lastMenu: Menu = MainMenu.instance
+    var menuOrder = MenuStack()
     
     private init() {}
     
