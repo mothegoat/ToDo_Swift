@@ -24,6 +24,7 @@
 		E06FBA74266ECCCA00D0ACE4 /* SelectedCategorymenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA73266ECCCA00D0ACE4 /* SelectedCategorymenu.swift */; };
 		E06FBA77266F52BF00D0ACE4 /* MenuStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA76266F52BF00D0ACE4 /* MenuStack.swift */; };
 		E06FBA7A266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA79266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift */; };
+		E06FBA7D266FA7B500D0ACE4 /* ItemsSortMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FBA7C266FA7B500D0ACE4 /* ItemsSortMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		E06FBA73266ECCCA00D0ACE4 /* SelectedCategorymenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategorymenu.swift; sourceTree = "<group>"; };
 		E06FBA76266F52BF00D0ACE4 /* MenuStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStack.swift; sourceTree = "<group>"; };
 		E06FBA79266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemToCategoryMenu.swift; sourceTree = "<group>"; };
+		E06FBA7C266FA7B500D0ACE4 /* ItemsSortMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsSortMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				E06FBA70266EC38F00D0ACE4 /* SelectedItemMenu.swift */,
 				E06FBA73266ECCCA00D0ACE4 /* SelectedCategorymenu.swift */,
 				E06FBA79266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift */,
+				E06FBA7C266FA7B500D0ACE4 /* ItemsSortMenu.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				E06FBA5F266EB0AB00D0ACE4 /* CategoriesMenu.swift in Sources */,
 				E06FBA30266DF44B00D0ACE4 /* main.swift in Sources */,
 				E06FBA58266EA71A00D0ACE4 /* MainMenu.swift in Sources */,
+				E06FBA7D266FA7B500D0ACE4 /* ItemsSortMenu.swift in Sources */,
 				E06FBA7A266F5E3000D0ACE4 /* AddItemToCategoryMenu.swift in Sources */,
 				E06FBA4A266E290B00D0ACE4 /* Category.swift in Sources */,
 				E06FBA53266EA61700D0ACE4 /* Menu.swift in Sources */,

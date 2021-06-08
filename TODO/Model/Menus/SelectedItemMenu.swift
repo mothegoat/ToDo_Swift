@@ -21,6 +21,7 @@ class SelectedItemMenu: Menu {
         print("Title: \(item.title)")
         print("Priority: \(item.priority)")
         print("Content: \(item.content)")
+        print("Time added: \(item.getTime())")
         
         print("\n 1. Edit Title \n 2. Edit Priority \n 3. Edit content \n 4. Delete \n 00. Go Back")
     }

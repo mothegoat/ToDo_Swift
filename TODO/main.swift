@@ -41,6 +41,8 @@ while input.lowercased() != "end" {
     }else if (controller.menuOrder.getCurrentMenu() === ItemsMenu.instance){
         if(input == "00"){
             controller.menuOrder.goBack()
+        }else if(input.lowercased() == "sort"){
+            controller.menuOrder.goToNextPage(nextMenu: ItemsSortMenu.instance)
         }else{
             if(!input.isNumber){
                 controller.menuOrder.getCurrentMenu().commandNotFound()
@@ -54,6 +56,38 @@ while input.lowercased() != "end" {
                     controller.selectedItemIndex = inputInInt - 1
                     controller.menuOrder.goToNextPage(nextMenu: SelectedItemMenu.instance)
                 }
+            }
+        }
+    }else if(controller.menuOrder.getCurrentMenu() === ItemsSortMenu.instance){
+        if(input == "00"){
+            controller.menuOrder.goBack()
+        }else{
+            if(input.lowercased() == "aa"){
+                controller.sortAA()
+                print("Sorted alphabetically ascending.")
+                controller.menuOrder.goBack()
+            }else if(input.lowercased() == "ad"){
+                controller.sortAD()
+                print("Sorted alphabetically descending.")
+                controller.menuOrder.goBack()
+            }else if(input.lowercased() == "pa"){
+                controller.sortPA()
+                print("Sorted prioritically ascending.")
+                controller.menuOrder.goBack()
+            }else if(input.lowercased() == "pd"){
+                controller.sortPD()
+                print("Sorted prioritically descending.")
+                controller.menuOrder.goBack()
+            }else if(input.lowercased() == "ta"){
+                controller.sortTA()
+                print("Sorted time ascending.")
+                controller.menuOrder.goBack()
+            }else if(input.lowercased() == "td"){
+                controller.sortTD()
+                print("Sorted time descending.")
+                controller.menuOrder.goBack()
+            }else{
+                controller.menuOrder.getCurrentMenu().commandNotFound()
             }
         }
     }else if(controller.menuOrder.getCurrentMenu() === SelectedItemMenu.instance){

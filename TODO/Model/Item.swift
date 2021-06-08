@@ -13,14 +13,18 @@ class Item: Equatable{
     }
     
     var priority: Priority
+    var priorityNumber: Int
     var title: String
     var content: String
+    var date: Date
     static var allItems = [Item]()
     
     init(priority: Int, title: String, content: String, addToItems: Bool) {
         self.priority = Item.convertPriorityIntToEnum(priority: priority)
+        self.priorityNumber = priority
         self.title = title
         self.content = content
+        self.date = Date()
         if(addToItems){
             Item.allItems.append(self)
         }
@@ -34,5 +38,9 @@ class Item: Equatable{
         }else{
             return Priority.HIGH
         }
+    }
+    
+    func getTime() -> String {
+        return DateFormatter.localizedString(from: date, dateStyle: .long, timeStyle: .medium)
     }
 }

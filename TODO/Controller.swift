@@ -28,4 +28,40 @@ class Controller {
     func addCategory(title: String) -> Void {
         Category(title: title, addToCategories: true)
     }
+    
+    func sortAA() -> Void {
+        Item.allItems.sort{
+            $0.title < $1.title
+        }
+    }
+    
+    func sortAD() -> Void {
+        Item.allItems.sort{
+            $1.title < $0.title
+        }
+    }
+    
+    func sortPA() -> Void {
+        Item.allItems.sort{
+            $0.priorityNumber < $1.priorityNumber
+        }
+    }
+    
+    func sortPD() -> Void {
+        Item.allItems.sort{
+            $1.priorityNumber < $0.priorityNumber
+        }
+    }
+    
+    func sortTA() -> Void {
+        Item.allItems.sort{
+            $0.date < $1.date
+        }
+    }
+    
+    func sortTD() -> Void {
+        Item.allItems.sort{
+            $1.date < $0.date
+        }
+    }
 }

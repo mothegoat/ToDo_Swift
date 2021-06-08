@@ -23,6 +23,7 @@ class ItemsMenu: Menu {
             i += 1
         }
         print("\n TO SEE THE CONTENT, ENTER ITEM'S NUMBER.")
+        print(" Enter *sort* to see sorting options.")
         print(" TO GO BACK ENTER 00")
     }
     
